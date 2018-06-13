@@ -1,6 +1,6 @@
-const path = require('path')
-const webpack = require('webpack')
-const CURRENT_WORKING_DIR = process.cwd()
+const path = require('path');
+const webpack = require('webpack');
+const CURRENT_WORKING_DIR = process.cwd();
 
 const config = {
     name: "browser",
@@ -9,7 +9,7 @@ const config = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client?reload=true',
-        './client/main.js'
+        './client/App.jsx'
     ],
     output: {
         path: path.resolve(__dirname, 'dist/'),
@@ -30,6 +30,6 @@ const config = {
           new webpack.HotModuleReplacementPlugin(),
           new webpack.NoEmitOnErrorsPlugin()
       ]
-}
+};
 
-module.exports = config
+module.exports = config;

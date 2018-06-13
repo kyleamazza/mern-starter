@@ -1,5 +1,8 @@
 # MERN - Simple Setup Check
 
+#### Original repository by Shama Hoque
+(Only light modifications were done to this repository, namely using .jsx extensions and removing excess views, leaving only the development environment code behind)
+
 A simple application with Webpack, Babel, and Nodemon configuration to check development environment setup for React-Node-Express-MongoDB based web application development.
 
 ### [Live Demo](http://simplesetup.mernbook.com/ "MERN Simple Setup")
