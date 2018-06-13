@@ -1,7 +1,9 @@
 import path from 'path'
 import express from 'express'
 import { MongoClient } from 'mongodb'
-import template from './../template'
+
+import template from '../template';
+
 //comment out before building for production
 import devBundle from './devBundle'
 
