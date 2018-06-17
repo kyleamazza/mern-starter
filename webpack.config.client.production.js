@@ -1,28 +1,34 @@
 const path = require('path');
 const webpack = require('webpack');
-const CURRENT_WORKING_DIR = process.cwd();
+const nodeExternals = require('webpack-node-externals');
 
 const config = {
-    mode: "production",
-    entry: [
-        path.join(CURRENT_WORKING_DIR, 'client/App.jsx')
-    ],
+    name: "server",
+    entry: [ path.join(__dirname, './server/server.js') ],
+    target: "node",
     output: {
-        path: path.join(CURRENT_WORKING_DIR , '/dist'),
-        filename: 'bundle.js',
-        publicPath: "/dist/"
+        path: path.join(__dirname, '/dist/'),
+        filename: "server.generated.js",
+        publicPath: '/dist/',
+        libraryTarget: "commonjs2"
     },
+    externals: [nodeExternals()],
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader'
-                ]
+                use: [ 'babel-loader' ]
+            },
+            {
+                test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
+                use: 'file-loader'
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     }
-};
+}
 
 module.exports = config;

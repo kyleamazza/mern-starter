@@ -6,6 +6,6 @@ const Header = () => {
             <h1>Quapp!</h1>
         </div>
     );
-}
+};
 
 export default Header;
